@@ -18,7 +18,7 @@
           <h2>Align</h2>
 
 
-          <div class="container alignStyle">
+          <div class="container justify-center alignStyle">
             <div class="">
               <input type="radio" id="left" name="jus" v-model="justify" value="justify-start">
               <label for="left"><img src="./src/assets/svg/002-left-alignment.svg" alt=""></label>
@@ -35,7 +35,7 @@
             </div>
           </div>
 
-          <div class="container alignStyle">
+          <div class="container justify-center alignStyle">
             <div class="">
               <input type="radio" id="top" name="ali" v-model="align" value="align-start">
               <label for="top"><img src="./src/assets/svg/006-vertical-alignment.svg" alt=""></label>
@@ -66,7 +66,7 @@
           <div v-if="!image">
 
             <label for="imgPrincipal">
-              Enviar imagem
+              <img src="./src/assets/svg/photo-camera.svg" alt="" style="width: 30px">
             </label>
             <input id="imgPrincipal" type="file" @change="onFileChange" class="hide">
           </div>

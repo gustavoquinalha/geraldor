@@ -257,20 +257,21 @@ img {
   display: none
 }
 .alignStyle label {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  margin: 1px
 }
 .alignStyle input[type="radio"] + label {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   transition: .3s
 }
 .alignStyle input[type="radio"]:checked + label {
-  background: #dedede;
+  background: #171814;
 }
