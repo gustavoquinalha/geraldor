@@ -40,10 +40,10 @@ new Vue({
   },
   data: {
     topo: false,
-  center: true,
-  bottom: false,
-  justify: '',
-  align: '',
+    center: true,
+    bottom: false,
+    justify: '',
+    align: '',
     image: '',
     colors: defaultProps,
     text: 'Titulo',
@@ -56,10 +56,10 @@ new Vue({
     widthValue: 800,
     heightValue: 600,
     newTodoText: '',
-   todos: [
-     'Do the dishes',
-     'Take out the trash',
-     'Mow the lawn'
+    todos: [
+       'Do the dishes',
+       'Take out the trash',
+       'Mow the lawn'
    ]
   },
   methods: {

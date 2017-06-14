@@ -84,14 +84,14 @@
         </div>
 
 
-        <div class="item1">
+        <!-- <div class="item1">
           <h2>Size</h2>
 
           <button v-on:click="counter++">+</button>
           <button v-on:click="counter--">-</button>
           <p>{{ counter }}</p>
 
-        </div>
+        </div> -->
 
 
         <div class="item1">
@@ -122,19 +122,6 @@
         </div>
 
 
-        <!-- <div class="item1">
-          <h2>Align</h2>
-          <label for="topo">Topo
-            <input type="radio" value="" id="topo" name="align">
-          </label><br />
-          <label for="center">center
-            <input type="radio" value="" id="center" name="align">
-          </label><br />
-          <label for="bottom">bottom
-            <input type="radio" value="" id="bottom" name="align">
-          </label>
-        </div> -->
-
 
 
         <!-- <div class="item1">
@@ -149,7 +136,7 @@
       </div>
       <div class="basis5 flex conteudo">
         <div class="container center height-full">
-          <div class="role container" v-bind:class="justify" v-bind:style="{ width: widthValue + 'px', background: 'url(' + image + ')', height: heightValue + 'px'}">
+          <div class="role container" v-bind:class="justify + ' ' + align" v-bind:style="{ width: widthValue + 'px', background: 'url(' + image + ')', height: heightValue + 'px'}">
             <!-- <img v-if="image" :src="image" style="object-fit: cover" v-bind:style="{ width: widthValue + 'px', height: heightValue + 'px'}"/> -->
             <div class="aqui">
               <h1 v-show="shown" v-text="text" v-bind:style="{ color: colors.hex, fontSize: fontSize + 'px' }"></h1>
