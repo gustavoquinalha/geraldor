@@ -11,77 +11,143 @@
   <div id="app">
 
     <div class="container height-full">
-      <div class="basis05 menu-icons hidden"></div>
+      <div class="basis05 menu-icons">
+        <div class="container column">
+          <div class="tes">
+            <label for="sizeMenu">
+              <img src="./src/assets/svg/size.svg " alt="" width="20" />
+            </label>
+            <input type="radio" name="name" v-model="menu" id="sizeMenu" value="sizeMenu">
+          </div>
+          <div class="tes">
+            <label for="picMenu">
+              <img src="./src/assets/svg/picture.svg " alt="" width="20" />
+            </label>
+            <input type="radio" name="name" v-model="menu" id="picMenu" value="picMenu">
+          </div>
+          <div class="tes">
+            <label for="alignMenu">
+              <img src="./src/assets/svg/align.svg " alt="" width="20" />
+            </label>
+            <input type="radio" name="name" v-model="menu" id="alignMenu" value="alignMenu">
+          </div>
+          <div class="tes">
+            <label for="fontMenu">
+              <img src="./src/assets/svg/font.svg " alt="" width="20" />
+            </label>
+            <input type="radio" name="name" v-model="menu" id="fontMenu" value="fontMenu">
+          </div>
+          <div class="tes">
+            <label for="componentsMenu">
+              <img src="./src/assets/svg/components.svg " alt="" width="20" />
+            </label>
+            <input type="radio" name="name" v-model="menu" id="componentsMenu" value="componentsMenu">
+          </div>
+        </div>
+      </div>
       <div class="basis2 menu-principal">
 
-        <div class="item1">
-          <h2>Align</h2>
 
-
-          <div class="container justify-center alignStyle">
-            <div class="">
-              <input type="radio" id="left" name="jus" v-model="justify" value="justify-start">
-              <label for="left"><img src="./src/assets/svg/002-left-alignment.svg" alt=""></label>
-              <br />
-            </div>
-            <div class="">
-              <input type="radio" id="center" name="jus" v-model="justify" value="justify-center">
-              <label for="center"><img src="./src/assets/svg/001-center-alignment.svg" alt=""></label>
-              <br />
-            </div>
-            <div class="">
-              <input type="radio" id="right" name="jus" v-model="justify" value="justify-end">
-              <label for="right"><img src="./src/assets/svg/003-right-alignment.svg" alt=""></label>
-            </div>
-          </div>
-
-          <div class="container justify-center alignStyle">
-            <div class="">
-              <input type="radio" id="top" name="ali" v-model="align" value="align-start">
-              <label for="top"><img src="./src/assets/svg/006-vertical-alignment.svg" alt=""></label>
-              <br />
-            </div>
-            <div class="">
-              <input type="radio" id="center2" name="ali" v-model="align" value="align-center">
-              <label for="center2"><img src="./src/assets/svg/004-vertical-alignment-2.svg" alt=""></label>
-              <br />
-            </div>
-            <div class="">
-              <input type="radio" id="bottom" name="ali" v-model="align" value="align-end">
-              <label for="bottom"><img src="./src/assets/svg/005-vertical-alignment-1.svg" alt=""></label>
-            </div>
-          </div>
-
-
-          <!-- {{align}} -->
-
-
-
-
-        </div>
-
-
-        <div class="item1">
-          <h2>Image</h2>
-          <div v-if="!image">
-
-            <label for="imgPrincipal">
-              <img src="./src/assets/svg/photo-camera.svg" alt="" style="width: 30px">
-            </label>
-            <input id="imgPrincipal" type="file" @change="onFileChange" class="hide">
-          </div>
-
-
-          <div v-if="image" v-cloak>
+        <div v-if="menu == 'sizeMenu'" v-cloak>
+          <div>
             <p>width</p>
             <input type="number" v-model="widthValue" placeholder="width">
             <p>height</p>
             <input type="number" v-model="heightValue" placeholder="height">
-            <br />
-            <button @click="removeImage">Remove image</button>
-          </div>
 
+          </div>
         </div>
+
+        <div v-else-if="menu == 'alignMenu'" v-cloak>
+          <div class="item1">
+            <h2>Align</h2>
+            <div class="container justify-center alignStyle">
+              <div class="">
+                <input type="radio" id="left" name="jus" v-model="justify" value="justify-start">
+                <label for="left"><img src="./src/assets/svg/002-left-alignment.svg" alt=""></label>
+                <br />
+              </div>
+              <div class="">
+                <input type="radio" id="center" name="jus" v-model="justify" value="justify-center">
+                <label for="center"><img src="./src/assets/svg/001-center-alignment.svg" alt=""></label>
+                <br />
+              </div>
+              <div class="">
+                <input type="radio" id="right" name="jus" v-model="justify" value="justify-end">
+                <label for="right"><img src="./src/assets/svg/003-right-alignment.svg" alt=""></label>
+              </div>
+            </div>
+
+            <div class="container justify-center alignStyle">
+              <div class="">
+                <input type="radio" id="top" name="ali" v-model="align" value="align-start">
+                <label for="top"><img src="./src/assets/svg/006-vertical-alignment.svg" alt=""></label>
+                <br />
+              </div>
+              <div class="">
+                <input type="radio" id="center2" name="ali" v-model="align" value="align-center">
+                <label for="center2"><img src="./src/assets/svg/004-vertical-alignment-2.svg" alt=""></label>
+                <br />
+              </div>
+              <div class="">
+                <input type="radio" id="bottom" name="ali" v-model="align" value="align-end">
+                <label for="bottom"><img src="./src/assets/svg/005-vertical-alignment-1.svg" alt=""></label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-else-if="menu == 'picMenu'" v-cloak>
+          <div class="item1">
+            <h2>Image</h2>
+            <div v-if="!image">
+
+              <label for="imgPrincipal">
+                <img src="./src/assets/svg/photo-camera.svg" alt="" style="width: 30px">
+              </label>
+              <input id="imgPrincipal" type="file" @change="onFileChange" class="hide">
+              <br />
+              <button v-if="image" @click="removeImage">Remove image</button>
+            </div>
+
+
+
+
+          </div>
+        </div>
+        <div v-else-if="menu == 'fontMenu'" v-cloak>
+          <div class="item1">
+            <h2>Text</h2>
+            <h4>title</h4>
+            <input type="text" v-model="text" placeholder="Digite seu texto">
+            <button v-show="!shown" @click="toggleText">Adicionar</button>
+            <button v-show="shown" @click="toggleText">Remover</button>
+
+
+            <h4>subtitle</h4>
+            <input type="text" v-model="stext" placeholder="Digite seu texto">
+            <button v-show="!shownn" @click="toggleStext">Adicionar</button>
+            <button v-show="shownn" @click="toggleStext">Remover</button>
+            <br />
+
+
+
+            <h4>Color</h4>
+            <compact-picker v-model="colors"></compact-picker>
+
+            <h4>Title font size</h4>
+            <input min="12" max="60" v-model="fontSize" type="range">
+
+            <h4>Subtitle font size</h4>
+            <input min="12" max="60" v-model="fontSizes" type="range">
+
+          </div>
+        </div>
+        <div v-else-if="menu == 'componentsMenu'" v-cloak>componentsMenu</div>
+        <div v-else>loading...</div>
+
+
+
+
 
 
         <!-- <div class="item1">
@@ -94,32 +160,7 @@
         </div> -->
 
 
-        <div class="item1">
-          <h2>Text</h2>
-          <h4>title</h4>
-          <input type="text" v-model="text" placeholder="Digite seu texto">
-          <button v-show="!shown" @click="toggleText">Adicionar</button>
-          <button v-show="shown" @click="toggleText">Remover</button>
 
-
-          <h4>subtitle</h4>
-          <input type="text" v-model="stext" placeholder="Digite seu texto">
-          <button v-show="!shownn" @click="toggleStext">Adicionar</button>
-          <button v-show="shownn" @click="toggleStext">Remover</button>
-          <br />
-
-
-
-          <h4>Color</h4>
-          <compact-picker v-model="colors"></compact-picker>
-
-          <h4>Title font size</h4>
-          <input min="12" max="60" v-model="fontSize" type="range">
-
-          <h4>Subtitle font size</h4>
-          <input min="12" max="60" v-model="fontSizes" type="range">
-
-        </div>
 
 
 

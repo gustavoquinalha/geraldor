@@ -202,10 +202,11 @@ html {
 
 
 .menu-icons {
-  background: #171814
+  background: #343C47;
 }
 .menu-principal {
-  background: #ececec
+  background: #4A5261;
+  color: #fff
 }
 .role {
   background: #ccc;
@@ -238,7 +239,6 @@ img {
 .item1 {
   padding-bottom: 20px;
   margin-bottom: 20px;
-  border-bottom: 1px solid #ccc
 }
 .vue-color__compact {
   width: 100%!important
@@ -274,4 +274,29 @@ img {
 }
 .alignStyle input[type="radio"]:checked + label {
   background: #171814;
+}
+
+
+.tes {
+  // border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  padding: 10px;
+}
+.tes:first-child {
+  padding-top: 10px;
+  // border-top: 1px solid #ccc;
+}
+.tes input[type="radio"] {
+  display: none
+}
+.tes img {
+  width: 25px;
+  opacity: .5;
+  cursor: pointer;
+  transition: .5s
+}
+.tes img:hover {
+  width: 25px;
+  opacity: 1
 }
