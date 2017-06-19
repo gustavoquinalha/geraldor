@@ -40,8 +40,8 @@ new Vue({
   },
   data: {
     topo: false,
-    menu: 'picMenu',
-    bgColor: 'bg1',
+    menu: 'sizeMenu',
+    bgColor: 'bg8',
     center: true,
     bottom: false,
     justify: 'justify-center',

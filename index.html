@@ -49,13 +49,28 @@
 
 
         <div v-if="menu == 'sizeMenu'" v-cloak>
-          <div>
-            <p>width</p>
-            <input type="number" v-model="widthValue" placeholder="width">
-            <p>height</p>
-            <input type="number" v-model="heightValue" placeholder="height">
+          <div class="item1">
 
+            <div class="container column wrap ">
+              <p class="intro">Antes de tudo, defina o tamanho do role!</p>
+
+              <div class="basis3 flex form-group">
+                <div>
+                  width:
+                </div>
+                <input type="number" v-model="widthValue" placeholder="width" class="input">
+                <span>Medida em pixel.</span>
+              </div>
+              <div class="basis3 flex form-group">
+                <div>
+                  height:
+                </div>
+                <input type="number" v-model="heightValue" placeholder="height" class="input">
+                <span>Medida em pixel.</span>
+              </div>
+            </div>
           </div>
+
         </div>
 
         <div v-else-if="menu == 'alignMenu'" v-cloak>
@@ -112,20 +127,61 @@
 
           <div class="item1">
             <h2>Color</h2>
-            <div>
-              <ul>
-                <li>No color- <input type="radio" id="cor1" v-model="bgColor" value="nobg"></li>
-                <li>Color 1 - <input type="radio" id="cor1" v-model="bgColor" value="bg1"></li>
-                <li>Color 2 - <input type="radio" id="cor2" v-model="bgColor" value="bg2"></li>
-                <li>Color 3 - <input type="radio" id="cor3" v-model="bgColor" value="bg3"></li>
-                <li>Color 4 - <input type="radio" id="cor4" v-model="bgColor" value="bg4"></li>
-                <li>Color 5 - <input type="radio" id="cor5" v-model="bgColor" value="bg5"></li>
-                <li>Color 6 - <input type="radio" id="cor6" v-model="bgColor" value="bg6"></li>
-                <li>Color 7 - <input type="radio" id="cor7" v-model="bgColor" value="bg7"></li>
-                {{bgColor}}
-
-                <div style="height: 100px; width: 100px" v-bind:class="bgColor"></div>
-              </ul>
+            <div class="container colors wrap align-center justify-start alignStyle">
+              <div class="basis-25">
+                <input type="radio" id="nocor" v-model="bgColor" value="nobg" />
+                <label for="nocor">
+                  <div class="demoBg nobg"></div>
+                </label>
+              </div>
+              <div class="basis-25">
+                <input type="radio" id="bg8" v-model="bgColor" value="bg8" />
+                <label for="bg8">
+                  <div class="demoBg bg8"></div>
+                </label>
+              </div>
+              <div class="basis-25">
+                <input type="radio" id="cor1" v-model="bgColor" value="bg1">
+                <label for="cor1">
+                  <div class="demoBg bg1"></div>
+                </label>
+              </div>
+              <div class="basis-25">
+                <input type="radio" id="cor2" v-model="bgColor" value="bg2">
+                <label for="cor2">
+                  <div class="demoBg bg2"></div>
+                </label>
+              </div>
+              <div class="basis-25">
+                <input type="radio" id="cor3" v-model="bgColor" value="bg3">
+                <label for="cor3">
+                  <div class="demoBg bg3"></div>
+                </label>
+              </div>
+              <div class="basis-25">
+                <input type="radio" id="cor4" v-model="bgColor" value="bg4">
+                <label for="cor4">
+                  <div class="demoBg bg4"></div>
+                </label>
+              </div>
+              <div class="basis-25">
+                <input type="radio" id="cor5" v-model="bgColor" value="bg5">
+                <label for="cor5">
+                  <div class="demoBg bg5"></div>
+                </label>
+              </div>
+              <div class="basis-25">
+                <input type="radio" id="cor6" v-model="bgColor" value="bg6">
+                <label for="cor6">
+                  <div class="demoBg bg6"></div>
+                </label>
+              </div>
+              <div class="basis-25">
+                <input type="radio" id="cor7" v-model="bgColor" value="bg7">
+                <label for="cor7">
+                  <div class="demoBg bg7"></div>
+                </label>
+              </div>
             </div>
           </div>
 
