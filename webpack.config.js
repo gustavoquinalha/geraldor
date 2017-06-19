@@ -32,7 +32,7 @@ module.exports = {
         }
       },
       {
-        test: /\.s[ac]ss$/,
+        test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           use: ['css-loader', 'sass-loader'],
           fallback: 'style-loader'
@@ -67,7 +67,7 @@ module.exports = {
   devtool: '#eval-source-map',
 
   plugins: [
-      new ExtractTextPlugin('[name].css'),
+      new ExtractTextPlugin('css/[name].css'),
 
       new PurifyCSSPlugin({
         paths: glob.sync(path.join(__dirname, '**/*.html')),
