@@ -1,15 +1,6 @@
 import Vue from 'vue'
 import { Compact } from 'vue-color'
 
-// Vue.component('todo-item', {
-//   template: `
-//     <li>
-//       {{ title }}
-//       <button v-on:click="$emit('remove')">X</button>
-//     </li>
-//   `,
-//   props: ['title']
-// })
 var defaultProps = {
   hex: '#194d33',
   hsl: {

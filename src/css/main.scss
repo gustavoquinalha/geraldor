@@ -214,9 +214,6 @@ html {
   max-width: 90%;
   background-position: center!important;
   background-size: cover!important;
-  // width: 800px;
-  // max-width: 90%;
-  // min-height: 600px
 }
 .aqui {
   padding: 10px;
@@ -282,14 +279,12 @@ img {
 
 
 .tes {
-  // border-bottom: 1px solid #ccc;
   margin-bottom: 10px;
   padding-bottom: 10px;
   padding: 10px;
 }
 .tes:first-child {
   padding-top: 10px;
-  // border-top: 1px solid #ccc;
 }
 .tes input[type="radio"] {
   display: none
@@ -306,31 +301,31 @@ img {
 }
 
 .nobg {
-  background: none
+  background: transparent;
 }
 .bg1 {
-  background: linear-gradient( 135deg, #FEB692 0%, #EA5455 100%)!important
+  background: linear-gradient( 135deg, #FEB692 0%, #EA5455 100%)!important;
 }
 .bg2 {
-background: linear-gradient( 135deg, #CE9FFC 0%, #7367F0 100%)!important
+background: linear-gradient( 135deg, #CE9FFC 0%, #7367F0 100%)!important;
 }
 .bg3 {
-background: linear-gradient( 135deg, #90F7EC 0%, #32CCBC 100%)!important
+background: linear-gradient( 135deg, #90F7EC 0%, #32CCBC 100%)!important;
 }
 .bg4 {
-background: linear-gradient( 135deg, #FFF6B7 0%, #F6416C 100%)!important
+background: linear-gradient( 135deg, #FFF6B7 0%, #F6416C 100%)!important;
 }
 .bg5 {
-background: linear-gradient( 135deg, #81FBB8 0%, #28C76F 100%)!important
+background: linear-gradient( 135deg, #81FBB8 0%, #28C76F 100%)!important;
 }
 .bg6 {
-background: linear-gradient( 135deg, #F97794 0%, #623AA2 100%)!important
+background: linear-gradient( 135deg, #F97794 0%, #623AA2 100%)!important;
 }
 .bg7 {
-background: linear-gradient( 135deg, #FCCF31 0%, #F55555 100%)!important
+background: linear-gradient( 135deg, #FCCF31 0%, #F55555 100%)!important;
 }
 .bg8 {
-  background: #fff!important
+  background: #fff!important;
 }
 .demoBg {
   width: 20px;
@@ -340,7 +335,7 @@ background: linear-gradient( 135deg, #FCCF31 0%, #F55555 100%)!important
   cursor: pointer;
 }
 .colors input[type="radio"] {
-  display: none
+  display: none;
 }
 .basis-25 {
   flex-basis: 30px;
