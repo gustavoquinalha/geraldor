@@ -13,31 +13,31 @@
     <div class="container height-full">
       <div class="basis05 menu-icons">
         <div class="container column">
-          <div class="tes" v-bind:class="[{ tey: menu == 'sizeMenu' }]">
+          <div class="tes" v-bind:class="[{ tey: menu == 'sizeMenu' }]" @click="sizeMenuMenu">
             <label for="sizeMenu" >
               <img src="./src/assets/svg/size.svg " alt="" width="20" />
             </label>
             <input type="radio" name="name" v-model="menu" id="sizeMenu" value="sizeMenu">
           </div>
-          <div class="tes" v-bind:class="[{ tey: menu == 'picMenu' }]">
+          <div class="tes" v-bind:class="[{ tey: menu == 'picMenu' }]" @click="sizeMenuMenu">
             <label for="picMenu">
               <img src="./src/assets/svg/picture.svg " alt="" width="20" />
             </label>
             <input type="radio" name="name" v-model="menu" id="picMenu" value="picMenu">
           </div>
-          <div class="tes" v-bind:class="[{ tey: menu == 'alignMenu' }]">
+          <div class="tes" v-bind:class="[{ tey: menu == 'alignMenu' }]" @click="sizeMenuMenu">
             <label for="alignMenu">
               <img src="./src/assets/svg/align.svg " alt="" width="20" />
             </label>
             <input type="radio" name="name" v-model="menu" id="alignMenu" value="alignMenu">
           </div>
-          <div class="tes" v-bind:class="[{ tey: menu == 'fontMenu' }]">
+          <div class="tes" v-bind:class="[{ tey: menu == 'fontMenu' }]" @click="sizeMenuMenu">
             <label for="fontMenu">
               <img src="./src/assets/svg/font.svg " alt="" width="20" />
             </label>
             <input type="radio" name="name" v-model="menu" id="fontMenu" value="fontMenu">
           </div>
-          <div class="tes" v-bind:class="[{ tey: menu == 'componentsMenu' }]">
+          <div class="tes" v-bind:class="[{ tey: menu == 'componentsMenu' }]" @click="sizeMenuMenu">
             <label for="componentsMenu">
               <img src="./src/assets/svg/components.svg " alt="" width="20" />
             </label>
@@ -45,10 +45,13 @@
           </div>
 
 
+
         </div>
       </div>
-      <div class="basis2 menu-principal">
-
+      <div class="basis2 menu-principal" v-show="showMenu" v-cloak style="position: relative;">
+        <div class="showmenuClass" @click="toggle">
+          <img src="./src/assets/back.svg" width="15" alt="">
+        </div>
 
         <div v-if="menu == 'sizeMenu'" v-cloak>
           <div class="item1">
@@ -195,7 +198,7 @@
           <div class="item1">
             <h2>Text</h2>
             <h4>title</h4>
-            <input type="text" v-model="text" placeholder="Digite seu texto">
+            <input type="text" class="input" v-model="text" placeholder="Digite seu texto">
             <button v-show="!shown" @click="toggleText">Adicionar</button>
             <button v-show="shown" @click="toggleText">Remover</button>
 

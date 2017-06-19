@@ -376,3 +376,24 @@ background: linear-gradient( 135deg, #FCCF31 0%, #F55555 100%)!important;
 .tey img {
   opacity: 1!important
 }
+.showmenuClass {
+  content: "";
+  width: 20px;
+  height: 20px;
+  // background: red;
+  margin: 0 auto;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  cursor: pointer;
+  opacity: .5
+}
+
+
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 2s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0
+}

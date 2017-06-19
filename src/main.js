@@ -31,7 +31,9 @@ new Vue({
   },
   data: {
     topo: false,
+    showMenu: true,
     isActive: true,
+    show: true,
     menu: 'sizeMenu',
     bgColor: 'bg8',
     center: true,
@@ -57,6 +59,15 @@ new Vue({
    ]
   },
   methods: {
+
+    sizeMenuMenu: function () {
+      this.showMenu = true;
+    },
+
+   toggle: function () {
+       this.showMenu = !this.showMenu;
+       this.menu = ''
+   },
 
     toggleText() {
      this.shown = !this.shown;
