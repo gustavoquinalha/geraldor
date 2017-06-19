@@ -31,6 +31,7 @@ new Vue({
   },
   data: {
     topo: false,
+    isActive: true,
     menu: 'sizeMenu',
     bgColor: 'bg8',
     center: true,

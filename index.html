@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>gerador-img</title>
-  <link rel="stylesheet" href="./dist/app.css">
+  <link rel="stylesheet" href="./dist/css/app.css">
 </head>
 
 <body>
@@ -13,36 +13,38 @@
     <div class="container height-full">
       <div class="basis05 menu-icons">
         <div class="container column">
-          <div class="tes">
-            <label for="sizeMenu">
+          <div class="tes" v-bind:class="[{ tey: menu == 'sizeMenu' }]">
+            <label for="sizeMenu" >
               <img src="./src/assets/svg/size.svg " alt="" width="20" />
             </label>
             <input type="radio" name="name" v-model="menu" id="sizeMenu" value="sizeMenu">
           </div>
-          <div class="tes">
+          <div class="tes" v-bind:class="[{ tey: menu == 'picMenu' }]">
             <label for="picMenu">
               <img src="./src/assets/svg/picture.svg " alt="" width="20" />
             </label>
             <input type="radio" name="name" v-model="menu" id="picMenu" value="picMenu">
           </div>
-          <div class="tes">
+          <div class="tes" v-bind:class="[{ tey: menu == 'alignMenu' }]">
             <label for="alignMenu">
               <img src="./src/assets/svg/align.svg " alt="" width="20" />
             </label>
             <input type="radio" name="name" v-model="menu" id="alignMenu" value="alignMenu">
           </div>
-          <div class="tes">
+          <div class="tes" v-bind:class="[{ tey: menu == 'fontMenu' }]">
             <label for="fontMenu">
               <img src="./src/assets/svg/font.svg " alt="" width="20" />
             </label>
             <input type="radio" name="name" v-model="menu" id="fontMenu" value="fontMenu">
           </div>
-          <div class="tes">
+          <div class="tes" v-bind:class="[{ tey: menu == 'componentsMenu' }]">
             <label for="componentsMenu">
               <img src="./src/assets/svg/components.svg " alt="" width="20" />
             </label>
             <input type="radio" name="name" v-model="menu" id="componentsMenu" value="componentsMenu">
           </div>
+
+
         </div>
       </div>
       <div class="basis2 menu-principal">
@@ -54,7 +56,7 @@
             <div class="container column wrap ">
               <p class="intro">Antes de tudo, defina o tamanho do role!</p>
 
-              <div class="basis3 flex form-group">
+              <div class="basis3 flex form-group active">
                 <div>
                   width:
                 </div>
