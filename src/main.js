@@ -40,8 +40,8 @@ new Vue({
   },
   data: {
     topo: false,
-    ok: false,
-    menu: 'sizeMenu',
+    menu: 'picMenu',
+    bgColor: 'bg1',
     center: true,
     bottom: false,
     justify: 'justify-center',
@@ -98,6 +98,10 @@ new Vue({
 
     removeImage: function (e) {
       this.image = '';
+    },
+
+    teste: function (e) {
+      this.bgColor = 'nobg'
     }
 
   }

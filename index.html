@@ -99,20 +99,39 @@
         <div v-else-if="menu == 'picMenu'" v-cloak>
           <div class="item1">
             <h2>Image</h2>
-            <div v-if="!image">
+            <div>
 
               <label for="imgPrincipal">
                 <img src="./src/assets/svg/photo-camera.svg" alt="" style="width: 30px">
               </label>
-              <input id="imgPrincipal" type="file" @change="onFileChange" class="hide">
-              <br />
-              <button v-if="image" @click="removeImage">Remove image</button>
+              <input id="imgPrincipal" type="file" @change="onFileChange" class="hide" @click="teste">
+
             </div>
-
-
-
-
+            <button v-if="image" @click="removeImage">Remove image</button>
           </div>
+
+          <div class="item1">
+            <h2>Color</h2>
+            <div>
+              <ul>
+                <li>No color- <input type="radio" id="cor1" v-model="bgColor" value="nobg"></li>
+                <li>Color 1 - <input type="radio" id="cor1" v-model="bgColor" value="bg1"></li>
+                <li>Color 2 - <input type="radio" id="cor2" v-model="bgColor" value="bg2"></li>
+                <li>Color 3 - <input type="radio" id="cor3" v-model="bgColor" value="bg3"></li>
+                <li>Color 4 - <input type="radio" id="cor4" v-model="bgColor" value="bg4"></li>
+                <li>Color 5 - <input type="radio" id="cor5" v-model="bgColor" value="bg5"></li>
+                <li>Color 6 - <input type="radio" id="cor6" v-model="bgColor" value="bg6"></li>
+                <li>Color 7 - <input type="radio" id="cor7" v-model="bgColor" value="bg7"></li>
+                {{bgColor}}
+
+                <div style="height: 100px; width: 100px" v-bind:class="bgColor"></div>
+              </ul>
+            </div>
+          </div>
+
+
+
+
         </div>
         <div v-else-if="menu == 'fontMenu'" v-cloak>
           <div class="item1">
@@ -177,11 +196,13 @@
       </div>
       <div class="basis5 flex conteudo">
         <div class="container center height-full">
-          <div class="role container" v-bind:class="justify + ' ' + align" v-bind:style="{ width: widthValue + 'px', background: 'url(' + image + ')', height: heightValue + 'px'}">
+          <div class="role container" v-bind:style="{ width: widthValue + 'px', background: 'url(' + image + ')', height: heightValue + 'px'}" v-bind:class="justify + ' ' + align + ' ' + bgColor">
             <!-- <img v-if="image" :src="image" style="object-fit: cover" v-bind:style="{ width: widthValue + 'px', height: heightValue + 'px'}"/> -->
             <div class="aqui">
-              <h1 v-show="shown" v-text="text" v-bind:style="{ color: colors.hex, fontSize: fontSize + 'px' }"></h1>
-              <p v-show="shownn" v-text="stext" v-bind:style="{ color: colors.hex, fontSize: fontSizes + 'px' }"></p>
+              <label for="fontMenu">
+                <h1 v-show="shown" v-text="text" v-bind:style="{ color: colors.hex, fontSize: fontSize + 'px' }"></h1>
+                <p v-show="shownn" v-text="stext" v-bind:style="{ color: colors.hex, fontSize: fontSizes + 'px' }"></p>
+              </label>
             </div>
           </div>
         </div>
