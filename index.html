@@ -13,6 +13,11 @@
     <div class="container height-full">
       <div class="basis05 menu-icons">
         <div class="container column">
+
+          <div class="tes logo">
+              <img src="./src/assets/svg/components.svg " alt="" width="20" />
+          </div>
+
           <div class="tes" v-bind:class="[{ tey: menu == 'sizeMenu' }]" @click="sizeMenuMenu">
             <label for="sizeMenu" >
               <img src="./src/assets/svg/size.svg " alt="" width="20" />
@@ -187,6 +192,36 @@
                   <div class="demoBg bg7"></div>
                 </label>
               </div>
+              <div class="basis-25">
+                <input type="radio" id="cor9" v-model="bgColor" value="bg9">
+                <label for="cor9">
+                  <div class="demoBg bg9"></div>
+                </label>
+              </div>
+              <div class="basis-25">
+                <input type="radio" id="cor10" v-model="bgColor" value="bg10">
+                <label for="cor10">
+                  <div class="demoBg bg10"></div>
+                </label>
+              </div>
+              <div class="basis-25">
+                <input type="radio" id="cor11" v-model="bgColor" value="bg11">
+                <label for="cor11">
+                  <div class="demoBg bg11"></div>
+                </label>
+              </div>
+              <div class="basis-25">
+                <input type="radio" id="cor12" v-model="bgColor" value="bg12">
+                <label for="cor12">
+                  <div class="demoBg bg12"></div>
+                </label>
+              </div>
+              <div class="basis-25">
+                <input type="radio" id="cor13" v-model="bgColor" value="bg13">
+                <label for="cor13">
+                  <div class="demoBg bg13"></div>
+                </label>
+              </div>
             </div>
           </div>
 
@@ -204,7 +239,7 @@
 
 
             <h4>subtitle</h4>
-            <input type="text" v-model="stext" placeholder="Digite seu texto">
+            <input type="text" class="input" v-model="stext" placeholder="Digite seu texto">
             <button v-show="!shownn" @click="toggleStext">Adicionar</button>
             <button v-show="shownn" @click="toggleStext">Remover</button>
             <br />
@@ -220,6 +255,7 @@
             <h4>Subtitle font size</h4>
             <input min="12" max="60" v-model="fontSizes" type="range">
 
+
           </div>
         </div>
         <div v-else-if="menu == 'componentsMenu'" v-cloak>componentsMenu</div>
@@ -227,7 +263,10 @@
 
 
 
-
+<div class="save">
+   <button id="btn-Preview-Image" class="btn full primary" @click="togglePreview">Preview</button>
+   <button id="btn-Convert-Html2Image" class="btn full download">Download</button>
+</div>
 
 
         <!-- <div class="item1">
@@ -257,13 +296,13 @@
       </div>
       <div class="basis5 flex conteudo">
         <div class="container center height-full">
-          <div class="role container" v-bind:style="{ width: widthValue + 'px', background: 'url(' + image + ')', height: heightValue + 'px'}" v-bind:class="justify + ' ' + align + ' ' + bgColor">
+          <div class="role container" id="html-content-holder" v-bind:style="{ width: widthValue + 'px', background: 'url(' + image + ')', height: heightValue + 'px'}" v-bind:class="justify + ' ' + align + ' ' + bgColor">
             <!-- <img v-if="image" :src="image" style="object-fit: cover" v-bind:style="{ width: widthValue + 'px', height: heightValue + 'px'}"/> -->
-            <div class="aqui">
-              <label for="fontMenu">
-                <h1 v-show="shown" v-text="text" v-bind:style="{ color: colors.hex, fontSize: fontSize + 'px' }"></h1>
-                <p v-show="shownn" v-text="stext" v-bind:style="{ color: colors.hex, fontSize: fontSizes + 'px' }"></p>
-              </label>
+            <div class="aqui" id="aqui">
+              <span for="fontMenu">
+                <h1 v-show="shown" class="draggable" v-text="text" v-bind:style="{ color: colors.hex, fontSize: fontSize + 'px' }"></h1>
+                <p v-show="shownn" class="draggable" v-text="stext" v-bind:style="{ color: colors.hex, fontSize: fontSizes + 'px' }"></p>
+              </span>
             </div>
           </div>
         </div>
@@ -275,8 +314,67 @@
 
 
 
-
+    <div class="preview" v-show="preview">
+      <h3>Preview :</h3>
+      <div id="previewImage">
+      </div>
+      <button @click="togglePreview">teste</button>
+    </div>
   </div>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://files.codepedia.info/files/uploads/iScripts/html2canvas.js"></script>
+
+
+
+  <script>
+$(document).ready(function(){
+    var element = $("#html-content-holder"); // global variable
+    var getCanvas; // global variable
+
+    $( '.draggable' ).draggable({
+      containment : ".role",
+      // helper: 'clone',
+      // iframeFix: true,
+      //  grid: [ 50, 20 ]
+    });
+
+
+
+
+
+    $("#btn-Preview-Image").on('click', function () {
+         html2canvas(element, {
+         onrendered: function (canvas) {
+                $("#previewImage").append(canvas);
+                getCanvas = canvas;
+             }
+         });
+    });
+
+	$("#btn-Convert-Html2Image").on('click', function () {
+    var imgageData = getCanvas.toDataURL("image/png");
+    // Now browser starts downloading it instead of just showing it
+    var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+    $("#btn-Convert-Html2Image").attr("download", "your_pic_name.png").attr("href", newData);
+	});
+
+
+
+
+  });
+
+
+
+  </script>
+
+
+
+
   <script src="./dist/build.js"></script>
 </body>
 

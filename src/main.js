@@ -30,6 +30,7 @@ new Vue({
     'compact-picker': Compact
   },
   data: {
+    preview: false,
     topo: false,
     showMenu: true,
     isActive: true,
@@ -59,6 +60,10 @@ new Vue({
    ]
   },
   methods: {
+
+    togglePreview() {
+     this.preview = !this.preview;
+   },
 
     sizeMenuMenu: function () {
       this.showMenu = true;
