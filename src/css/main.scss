@@ -61,7 +61,7 @@ html {
   width: 100%
 }
 .height-full {
-  min-height: 100vh
+  min-height: 100%
 }
 .container {
   display: flex;
@@ -476,4 +476,12 @@ background: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%)!important
   position: absolute;
   top: 0;
   left: 0
+}
+.meme {
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-text-stroke: 3px #000;
+font-family: 'Archivo Black', sans-serif;
+font-weight: 900;
+text-align: center;
 }

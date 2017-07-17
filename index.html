@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <title>gerador-img</title>
   <link rel="stylesheet" href="./dist/css/app.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:900" rel="stylesheet">
+
 </head>
 
 <body>
@@ -15,11 +17,11 @@
         <div class="container column">
 
           <div class="tes logo">
-              <img src="./src/assets/svg/components.svg " alt="" width="20" />
+            <img src="./src/assets/svg/components.svg " alt="" width="20" />
           </div>
 
           <div class="tes" v-bind:class="[{ tey: menu == 'sizeMenu' }]" @click="sizeMenuMenu">
-            <label for="sizeMenu" >
+            <label for="sizeMenu">
               <img src="./src/assets/svg/size.svg " alt="" width="20" />
             </label>
             <input type="radio" name="name" v-model="menu" id="sizeMenu" value="sizeMenu">
@@ -263,10 +265,10 @@
 
 
 
-<div class="save">
-   <button id="btn-Preview-Image" class="btn full primary" @click="togglePreview">Preview</button>
-   <button id="btn-Convert-Html2Image" class="btn full download">Download</button>
-</div>
+        <div class="save">
+          <button id="btn-Preview-Image" class="btn full primary" @click="togglePreview">Preview</button>
+          <button id="btn-Convert-Html2Image" class="btn full download">Download</button>
+        </div>
 
 
         <!-- <div class="item1">
@@ -295,15 +297,27 @@
 
       </div>
       <div class="basis5 flex conteudo">
-        <div class="container center height-full">
-          <div class="role container" id="html-content-holder" v-bind:style="{ width: widthValue + 'px', background: 'url(' + image + ')', height: heightValue + 'px'}" v-bind:class="justify + ' ' + align + ' ' + bgColor">
+        <div class="container center" style="height: 100vh">
+          <div class="role container column" id="html-content-holder" v-bind:style="{ width: widthValue + 'px', background: 'url(' + image + ')', height: heightValue + 'px'}" v-bind:class="justify + ' ' + align + ' ' + bgColor">
             <!-- <img v-if="image" :src="image" style="object-fit: cover" v-bind:style="{ width: widthValue + 'px', height: heightValue + 'px'}"/> -->
-            <div class="aqui" id="aqui">
+
+
+            <div class="flex">
+              <div class="container height-full align-start justify-center">
+                <h1 v-text="text" class="meme" v-bind:style="{ fontSize: fontSize + 'px' }"></h1>
+              </div>
+            </div>
+            <div class="flex">
+              <div class="container height-full align-end justify-center">
+                <h1 v-text="stext" class="meme" v-bind:style="{ fontSize: fontSizes + 'px' }"></h1>
+              </div>
+            </div>
+            <!-- <div class="aqui" id="aqui">
               <span for="fontMenu">
                 <h1 v-show="shown" class="draggable" v-text="text" v-bind:style="{ color: colors.hex, fontSize: fontSize + 'px' }"></h1>
                 <p v-show="shownn" class="draggable" v-text="stext" v-bind:style="{ color: colors.hex, fontSize: fontSizes + 'px' }"></p>
               </span>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -332,44 +346,41 @@
 
 
   <script>
-$(document).ready(function(){
-    var element = $("#html-content-holder"); // global variable
-    var getCanvas; // global variable
+    $(document).ready(function() {
+      var element = $("#html-content-holder"); // global variable
+      var getCanvas; // global variable
 
-    $( '.draggable' ).draggable({
-      containment : ".role",
-      // helper: 'clone',
-      // iframeFix: true,
-      //  grid: [ 50, 20 ]
+      $('.draggable').draggable({
+        containment: ".role",
+        // helper: 'clone',
+        // iframeFix: true,
+        //  grid: [ 50, 20 ]
+      });
+
+
+
+
+
+      $("#btn-Preview-Image").on('click', function() {
+        html2canvas(element, {
+          onrendered: function(canvas) {
+            $("#previewImage").append(canvas);
+            getCanvas = canvas;
+          }
+        });
+      });
+
+      $("#btn-Convert-Html2Image").on('click', function() {
+        var imgageData = getCanvas.toDataURL("image/png");
+        // Now browser starts downloading it instead of just showing it
+        var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+        $("#btn-Convert-Html2Image").attr("download", "your_pic_name.png").attr("href", newData);
+      });
+
+
+
+
     });
-
-
-
-
-
-    $("#btn-Preview-Image").on('click', function () {
-         html2canvas(element, {
-         onrendered: function (canvas) {
-                $("#previewImage").append(canvas);
-                getCanvas = canvas;
-             }
-         });
-    });
-
-	$("#btn-Convert-Html2Image").on('click', function () {
-    var imgageData = getCanvas.toDataURL("image/png");
-    // Now browser starts downloading it instead of just showing it
-    var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
-    $("#btn-Convert-Html2Image").attr("download", "your_pic_name.png").attr("href", newData);
-	});
-
-
-
-
-  });
-
-
-
   </script>
 
 
